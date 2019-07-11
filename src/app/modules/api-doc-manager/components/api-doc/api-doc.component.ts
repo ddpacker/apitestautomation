@@ -13,7 +13,10 @@ export class ApiDocComponent implements OnInit {
   @Output() sendEvent = new EventEmitter();
 
   fileToUpload: File = null;
-  uploadService: UploadService;
+  
+  constructor(
+    private uploadService: UploadService
+  ) { }
 
   handleUpload(files: FileList) {
     this.fileToUpload = files.item(0);
@@ -41,7 +44,7 @@ export class ApiDocComponent implements OnInit {
 
   }
 
-  constructor() { }
+
 
   ngOnInit() {
   }
