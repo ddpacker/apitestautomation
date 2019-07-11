@@ -1,0 +1,14 @@
+<form>
+    <table class="table-hover table-bordered">
+        <tbody>
+            <tr>
+                <app-api-doc (sendEvent)="handleEvent($event)"></app-api-doc>
+            </tr>
+            <div *ngIf="apiUploads.length>0">
+                <tr *ngFor="let apiUpload of apiUploads">
+                    <app-api-doc (sendEvent)="handleEvent($event)" [apiUpload]="apiUpload"></app-api-doc>
+                </tr>
+            </div>
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,27 @@
+<div class="jumbotron w-50">
+    <h1 class="display-4">Project Manager</h1>
+    <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <div class="form-group">
+        <label for="projectTitle">Project Title</label>
+        <input class="form-control" id="projectTitle" placeholder="Please add a title here" #projectTitle>
+    </div>
+    <div class="form-group">
+        <label for="projectDesc">Project Description</label>
+        <textarea class="form-control" rows="4" id="projectDesc" placeholder="Please describe your project here" #docPath></textarea>
+    </div>
+
+    <hr class="my-4">
+
+    <app-api-doc-grid class="d-flex justify-content-center"></app-api-doc-grid>
+
+    <hr class="my-4">
+
+    <button type="button" class="btn btn-success float-right">
+        <span class="align-top">Submit<i class="material-icons">chevron_right</i></span>
+    </button>
+
+</div>

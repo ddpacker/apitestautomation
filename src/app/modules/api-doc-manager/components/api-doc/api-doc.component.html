@@ -1,0 +1,47 @@
+<div style="width: 100%">
+    <div style="width: 100%" *ngIf="apiUpload==null">
+        <td style="width: 5%"></td>
+        <td class="align-middle" style="width: 55%">
+            <!--<input (keyup)="0" class="form-control" id="docUpload" #docPath>-->
+            <!--<input type="file" class="form-control-file" id="docUpload" #docPath>-->
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" (change)="0" id="docUpload" #docPath>
+                    <label class="custom-file-label" for="docUpload">{{docPath.value ? docPath.value : "Please upload a file"}}</label>
+                </div>
+            </div>
+        </td>
+        <td class="align-middle" style="width: 20%">
+            <span class="align-middle">
+                <input (keyup)="0" class="form-control" id="apiURL" #apiURL>
+            </span>
+        </td>
+        <td class="align-middle text-center" style="width: 20%">
+            <button *ngIf="(apiURL.value!='')&&(docPath.value!='')" type="button" class="btn btn-block btn-success"  (click)="addApi(docPath.value, apiURL.value); apiURL.value=''; docPath.value=''"><i class="material-icons">add</i></button>
+            <button *ngIf="(apiURL.value=='')||(docPath.value=='')" type="button" class="btn btn-block btn-success" disabled><i class="material-icons">add</i></button>   
+        </td>
+    </div>
+
+    <div style="width:100%" *ngIf="apiUpload!=null">
+        <td style="width:5%">
+            <p class="text-center">{{apiUpload.id}}</p>
+        </td>
+        <td class="align-middle" style="width: 55%">
+            <!--<input class="form-control" id="docUpload" placeholder="{{apiUpload.filePath}}" disabled>-->
+            <!--<input type="file" class="form-control-file" id="docUpload">-->
+            <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" (change)="0" id="docUpload" #docPath disabled>
+                        <label class="custom-file-label" for="docUpload">{{apiUpload.filePath}}</label>
+                    </div>
+                </div>
+        </td>
+        <td class="align-middle" style="width: 20%">
+            <input class="form-control" id="apiURL" placeholder="{{apiUpload.apiPath}}" disabled>
+        </td>
+        <td class="align-middle text-center" style="width: 20%">
+            <div style="width:50%; float:left;"><button type="button" class="btn btn-block btn-info"><i class="material-icons">edit</i></button></div>
+            <div style="width:50%;"><button type="button" class="btn btn-block btn-danger" (click)="deleteApi(apiUpload.id)"><i class="material-icons">close</i></button></div>
+        </td>
+    </div>
+</div>
