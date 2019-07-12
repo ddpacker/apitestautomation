@@ -7,7 +7,7 @@
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" (change)="handleUpload($event.target.files)" id="docUpload" #docPath>
-                    <label class="custom-file-label" for="docUpload">{{docPath.value ? docPath.value : "Please upload a file"}}</label>
+                    <label class="custom-file-label" for="docUpload">{{docPath.value ? docPath.value.substring((docPath.value.lastIndexOf('\\')),(docPath.value.length)) : "Please upload a file"}}</label>
                 </div>
             </div>
         </td>
