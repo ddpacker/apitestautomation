@@ -9,26 +9,28 @@ import { UploadService } from '../../../../services/upload.service'
 })
 export class ApiDocComponent implements OnInit {
 
+  constructor(private uploadService: UploadService) { }
+
+  ngOnInit() {
+  }
+
   @Input() apiUpload: apiUpload;
   @Output() sendEvent = new EventEmitter();
 
-  fileToUpload: File = null;
-  uploadService: UploadService;
+  fileToUpload: File;
 
   handleUpload(files: FileList) {
     this.fileToUpload = files.item(0);
   }
 
-  uploadFile() {
-    this.uploadService.post(this.fileToUpload).subscribe(data => {
-      console.log("Success!")
-    }, error => {
-      console.log(error);
+  uploadFile(api) {
+    this.uploadService.postFile(this.fileToUpload, api).subscribe(file => {
+      console.log(file);
     });
   }
 
   addApi(path: string, api: string) {
-    this.uploadFile();
+    this.uploadFile(api);
     const newApi = new apiUpload(null, path, api);
     this.sendEvent.emit(["add", newApi])
   }
@@ -40,10 +42,4 @@ export class ApiDocComponent implements OnInit {
   updateApi(id: number, path: string, api: string) {
 
   }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

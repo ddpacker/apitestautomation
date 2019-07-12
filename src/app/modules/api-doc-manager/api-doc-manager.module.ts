@@ -8,7 +8,6 @@ import { ApiDocManagerComponent } from './page/api-doc-manager/api-doc-manager.c
 import { ApiDocComponent } from './components/api-doc/api-doc.component';
 import { DetailWrapperComponent } from './components/detail-wrapper/detail-wrapper.component';
 
-
 @NgModule({
   declarations: [ApiDocGridComponent, ApiDocManagerComponent, ApiDocComponent, DetailWrapperComponent],
   imports: [
