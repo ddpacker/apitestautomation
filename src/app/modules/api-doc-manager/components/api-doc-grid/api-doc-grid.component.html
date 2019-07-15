@@ -2,7 +2,7 @@
     <table class="table-hover table-bordered">
         <tbody>
             <tr>
-                <app-api-doc (sendEvent)="handleEvent($event)"></app-api-doc>
+                <app-api-new-doc (sendEvent)="handleEvent($event)"></app-api-new-doc>
             </tr>
             <div *ngIf="apiUploads.length>0">
                 <tr *ngFor="let apiUpload of apiUploads">

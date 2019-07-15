@@ -1,0 +1,20 @@
+<div style="width: 100%">
+    <td style="width: 5%"></td>
+    <td class="align-middle" style="width: 55%">
+        <div class="input-group">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" (change)="handleUpload($event.target.files)" id="docUpload" #docPath>
+                <label class="custom-file-label" for="docUpload">{{docPath.value ? docPath.value.substring((docPath.value.lastIndexOf('\\')),(docPath.value.length)) : "Please upload a file"}}</label>
+            </div>
+        </div>
+    </td>
+    <td class="align-middle" style="width: 20%">
+        <span class="align-middle">
+            <input (keyup)="0" class="form-control" id="apiURL" #apiURL>
+        </span>
+    </td>
+    <td class="align-middle text-center" style="width: 20%">
+        <button *ngIf="(apiURL.value!='')&&(docPath.value!='')" type="button" class="btn btn-block btn-success"  (click)="addApi(docPath.value, apiURL.value); apiURL.value=''; docPath.value=''"><i class="material-icons">add</i></button>
+        <button *ngIf="(apiURL.value=='')||(docPath.value=='')" type="button" class="btn btn-block btn-success" disabled><i class="material-icons">add</i></button>   
+    </td>
+</div>

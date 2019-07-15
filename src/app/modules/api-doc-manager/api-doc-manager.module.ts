@@ -7,9 +7,10 @@ import { ApiDocGridComponent } from './components/api-doc-grid/api-doc-grid.comp
 import { ApiDocManagerComponent } from './page/api-doc-manager/api-doc-manager.component';
 import { ApiDocComponent } from './components/api-doc/api-doc.component';
 import { DetailWrapperComponent } from './components/detail-wrapper/detail-wrapper.component';
+import { ApiNewDocComponent } from './components/api-new-doc/api-new-doc.component';
 
 @NgModule({
-  declarations: [ApiDocGridComponent, ApiDocManagerComponent, ApiDocComponent, DetailWrapperComponent],
+  declarations: [ApiDocGridComponent, ApiDocManagerComponent, ApiDocComponent, DetailWrapperComponent, ApiNewDocComponent],
   imports: [
     CommonModule,
     ApiDocManagerRoutingModule

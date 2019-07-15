@@ -1,9 +1,7 @@
-<div style="width: 100%">
+<!--<div style="width: 100%">
     <div style="width: 100%" *ngIf="apiUpload==null">
         <td style="width: 5%"></td>
         <td class="align-middle" style="width: 55%">
-            <!--<input (keyup)="0" class="form-control" id="docUpload" #docPath>-->
-            <!--<input type="file" class="form-control-file" id="docUpload" #docPath>-->
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" (change)="handleUpload($event.target.files)" id="docUpload" #docPath>
@@ -20,7 +18,7 @@
             <button *ngIf="(apiURL.value!='')&&(docPath.value!='')" type="button" class="btn btn-block btn-success"  (click)="addApi(docPath.value, apiURL.value); apiURL.value=''; docPath.value=''"><i class="material-icons">add</i></button>
             <button *ngIf="(apiURL.value=='')||(docPath.value=='')" type="button" class="btn btn-block btn-success" disabled><i class="material-icons">add</i></button>   
         </td>
-    </div>
+    </div> -->
 
     <div style="width:100%" *ngIf="apiUpload!=null">
         <td style="width:5%">
@@ -44,4 +42,3 @@
             <div style="width:50%; float: right;"><button type="button" class="btn btn-block btn-danger" (click)="deleteApi(apiUpload.id)"><i class="material-icons">close</i></button></div>
         </td>
     </div>
-</div>
